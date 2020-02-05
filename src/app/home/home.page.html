@@ -1,14 +1,26 @@
-<ion-header>
+<ion-header no-border>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Push App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Pushes</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let push of pushService.mensajes">
+        <ion-label>
+          <h1>{{ push.title }}</h1>
+          <p> {{ push.body }} </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
   </div>
 </ion-content>
